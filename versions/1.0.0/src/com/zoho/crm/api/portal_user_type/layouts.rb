@@ -10,7 +10,7 @@ module ZOHOCRMSDK
         @display_label = nil
         @name = nil
         @id = nil
-        @defaultview = nil
+        @default_view = nil
         @key_modified = Hash.new
       end
 
@@ -68,21 +68,21 @@ module ZOHOCRMSDK
         @key_modified['id'] = 1
       end
 
-        # The method to get the defaultview
+        # The method to get the default_view
         # @return An instance of Views
 
-      def defaultview
-        @defaultview
+      def default_view
+        @default_view
       end
 
-        # The method to set the value to defaultview
-        # @param defaultview [Views] An instance of Views
+        # The method to set the value to default_view
+        # @param default_view [Views] An instance of Views
 
-      def defaultview=(defaultview)
-        if defaultview!=nil and !defaultview.is_a? Views
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: defaultview EXPECTED TYPE: Views', nil, nil)
+      def default_view=(default_view)
+        if default_view!=nil and !default_view.is_a? Views
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: default_view EXPECTED TYPE: Views', nil, nil)
         end
-        @defaultview = defaultview
+        @default_view = default_view
         @key_modified['_default_view'] = 1
       end
 

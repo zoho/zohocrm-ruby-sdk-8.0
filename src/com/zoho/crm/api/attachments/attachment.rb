@@ -13,6 +13,7 @@ module ZOHOCRMSDK
         @created_by = nil
         @parent_id = nil
         @sharing_permission = nil
+        @record_status__s = nil
         @attachment_type = nil
         @id = nil
         @modified_time = nil
@@ -25,6 +26,10 @@ module ZOHOCRMSDK
         @se_module = nil
         @state = nil
         @link_url = nil
+        @attachment_source__s = nil
+        @file_id__s = nil
+        @field_states = nil
+        @zia_visions = nil
         @key_modified = Hash.new
       end
 
@@ -116,6 +121,24 @@ module ZOHOCRMSDK
         end
         @sharing_permission = sharing_permission
         @key_modified['$sharing_permission'] = 1
+      end
+
+        # The method to get the record_status__s
+        # @return A String value
+
+      def record_status__s
+        @record_status__s
+      end
+
+        # The method to set the value to record_status__s
+        # @param record_status__s [String] A String
+
+      def record_status__s=(record_status__s)
+        if record_status__s!=nil and !record_status__s.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: record_status__s EXPECTED TYPE: String', nil, nil)
+        end
+        @record_status__s = record_status__s
+        @key_modified['Record_Status__s'] = 1
       end
 
         # The method to get the attachment_type
@@ -332,6 +355,78 @@ module ZOHOCRMSDK
         end
         @link_url = link_url
         @key_modified['$link_url'] = 1
+      end
+
+        # The method to get the attachment_source__s
+        # @return A String value
+
+      def attachment_source__s
+        @attachment_source__s
+      end
+
+        # The method to set the value to attachment_source__s
+        # @param attachment_source__s [String] A String
+
+      def attachment_source__s=(attachment_source__s)
+        if attachment_source__s!=nil and !attachment_source__s.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: attachment_source__s EXPECTED TYPE: String', nil, nil)
+        end
+        @attachment_source__s = attachment_source__s
+        @key_modified['Attachment_Source__s'] = 1
+      end
+
+        # The method to get the file_id__s
+        # @return A String value
+
+      def file_id__s
+        @file_id__s
+      end
+
+        # The method to set the value to file_id__s
+        # @param file_id__s [String] A String
+
+      def file_id__s=(file_id__s)
+        if file_id__s!=nil and !file_id__s.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: file_id__s EXPECTED TYPE: String', nil, nil)
+        end
+        @file_id__s = file_id__s
+        @key_modified['File_Id__s'] = 1
+      end
+
+        # The method to get the field_states
+        # @return A String value
+
+      def field_states
+        @field_states
+      end
+
+        # The method to set the value to field_states
+        # @param field_states [String] A String
+
+      def field_states=(field_states)
+        if field_states!=nil and !field_states.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: field_states EXPECTED TYPE: String', nil, nil)
+        end
+        @field_states = field_states
+        @key_modified['$field_states'] = 1
+      end
+
+        # The method to get the zia_visions
+        # @return A String value
+
+      def zia_visions
+        @zia_visions
+      end
+
+        # The method to set the value to zia_visions
+        # @param zia_visions [String] A String
+
+      def zia_visions=(zia_visions)
+        if zia_visions!=nil and !zia_visions.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: zia_visions EXPECTED TYPE: String', nil, nil)
+        end
+        @zia_visions = zia_visions
+        @key_modified['$zia_visions'] = 1
       end
 
         # The method to check if the user has modified the given key

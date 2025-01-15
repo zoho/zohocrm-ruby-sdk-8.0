@@ -1,4 +1,3 @@
-require_relative '../modules/minified_module'
 require_relative '../util/model'
 
 module ZOHOCRMSDK
@@ -14,36 +13,36 @@ module ZOHOCRMSDK
       end
 
         # The method to get the related_field
-        # @return An instance of Modules::MinifiedModule
+        # @return An instance of LookupField
 
       def related_field
         @related_field
       end
 
         # The method to set the value to related_field
-        # @param related_field [Modules::MinifiedModule] An instance of Modules::MinifiedModule
+        # @param related_field [LookupField] An instance of LookupField
 
       def related_field=(related_field)
-        if related_field!=nil and !related_field.is_a? Modules::MinifiedModule
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: related_field EXPECTED TYPE: MinifiedModule', nil, nil)
+        if related_field!=nil and !related_field.is_a? LookupField
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: related_field EXPECTED TYPE: LookupField', nil, nil)
         end
         @related_field = related_field
         @key_modified['related_field'] = 1
       end
 
         # The method to get the lookup_field
-        # @return An instance of Modules::MinifiedModule
+        # @return An instance of LookupField
 
       def lookup_field
         @lookup_field
       end
 
         # The method to set the value to lookup_field
-        # @param lookup_field [Modules::MinifiedModule] An instance of Modules::MinifiedModule
+        # @param lookup_field [LookupField] An instance of LookupField
 
       def lookup_field=(lookup_field)
-        if lookup_field!=nil and !lookup_field.is_a? Modules::MinifiedModule
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: lookup_field EXPECTED TYPE: MinifiedModule', nil, nil)
+        if lookup_field!=nil and !lookup_field.is_a? LookupField
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: lookup_field EXPECTED TYPE: LookupField', nil, nil)
         end
         @lookup_field = lookup_field
         @key_modified['lookup_field'] = 1

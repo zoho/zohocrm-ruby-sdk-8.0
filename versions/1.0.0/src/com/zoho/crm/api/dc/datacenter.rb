@@ -68,6 +68,13 @@ module ZOHOCRMSDK
             return CADataCenter::DEVELOPER
           end
           return CADataCenter::PRODUCTION
+        elsif Constants::SA_DATACENTER.include?(config)
+          if config.include? Constants::SANDBOX
+            return SADataCenter::SANDBOX
+          elsif config.include? Constants::DEVELOPER
+            return SADataCenter::DEVELOPER
+          end
+          return SADataCenter::PRODUCTION
         end
         nil
       end

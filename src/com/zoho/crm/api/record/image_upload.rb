@@ -22,6 +22,7 @@ module ZOHOCRMSDK
         @created_by__s = nil
         @owner__s = nil
         @modified_by__s = nil
+        @attachment_source__s = nil
         @key_modified = Hash.new
       end
 
@@ -275,6 +276,24 @@ module ZOHOCRMSDK
         end
         @modified_by__s = modified_by__s
         @key_modified['Modified_By__s'] = 1
+      end
+
+        # The method to get the attachment_source__s
+        # @return A String value
+
+      def attachment_source__s
+        @attachment_source__s
+      end
+
+        # The method to set the value to attachment_source__s
+        # @param attachment_source__s [String] A String
+
+      def attachment_source__s=(attachment_source__s)
+        if attachment_source__s!=nil and !attachment_source__s.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: attachment_source__s EXPECTED TYPE: String', nil, nil)
+        end
+        @attachment_source__s = attachment_source__s
+        @key_modified['Attachment_Source__s'] = 1
       end
 
         # The method to check if the user has modified the given key

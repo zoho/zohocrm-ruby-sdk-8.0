@@ -13,6 +13,7 @@ module ZOHOCRMSDK
         @id = nil
         @sequence_number = nil
         @display_value = nil
+        @reference_value = nil
         @key_modified = Hash.new
       end
 
@@ -104,6 +105,24 @@ module ZOHOCRMSDK
         end
         @display_value = display_value
         @key_modified['display_value'] = 1
+      end
+
+        # The method to get the reference_value
+        # @return A String value
+
+      def reference_value
+        @reference_value
+      end
+
+        # The method to set the value to reference_value
+        # @param reference_value [String] A String
+
+      def reference_value=(reference_value)
+        if reference_value!=nil and !reference_value.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: reference_value EXPECTED TYPE: String', nil, nil)
+        end
+        @reference_value = reference_value
+        @key_modified['reference_value'] = 1
       end
 
         # The method to check if the user has modified the given key

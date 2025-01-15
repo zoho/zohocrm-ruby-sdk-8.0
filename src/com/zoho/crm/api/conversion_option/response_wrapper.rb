@@ -9,25 +9,25 @@ module ZOHOCRMSDK
 
       # Creates an instance of ResponseWrapper
       def initialize
-        @conversionoptions = nil
+        @conversion_options = nil
         @key_modified = Hash.new
       end
 
-        # The method to get the conversionoptions
+        # The method to get the conversion_options
         # @return An instance of ConversionOptions
 
-      def conversionoptions
-        @conversionoptions
+      def conversion_options
+        @conversion_options
       end
 
-        # The method to set the value to conversionoptions
-        # @param conversionoptions [ConversionOptions] An instance of ConversionOptions
+        # The method to set the value to conversion_options
+        # @param conversion_options [ConversionOptions] An instance of ConversionOptions
 
-      def conversionoptions=(conversionoptions)
-        if conversionoptions!=nil and !conversionoptions.is_a? ConversionOptions
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: conversionoptions EXPECTED TYPE: ConversionOptions', nil, nil)
+      def conversion_options=(conversion_options)
+        if conversion_options!=nil and !conversion_options.is_a? ConversionOptions
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: conversion_options EXPECTED TYPE: ConversionOptions', nil, nil)
         end
-        @conversionoptions = conversionoptions
+        @conversion_options = conversion_options
         @key_modified['__conversion_options'] = 1
       end
 

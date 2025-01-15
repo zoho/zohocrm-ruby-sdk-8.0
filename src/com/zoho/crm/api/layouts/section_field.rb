@@ -25,6 +25,7 @@ require_relative '../fields/textarea'
 require_relative '../fields/tooltip'
 require_relative '../fields/unique'
 require_relative '../fields/view_type'
+require_relative '../global_picklists/picklist'
 require_relative '../modules/minified_module'
 require_relative '../modules/sharing_properties'
 require_relative '../util/model'
@@ -117,7 +118,7 @@ module ZOHOCRMSDK
         @additional_column = nil
         @field_label = nil
         @global_picklist = nil
-        @updateexistingrecords = nil
+        @update_existing_records = nil
         @number_separator = nil
         @textarea = nil
         @key_modified = Hash.new
@@ -1546,35 +1547,38 @@ module ZOHOCRMSDK
       end
 
         # The method to get the global_picklist
-        # @return A lang::Object value
+        # @return An instance of GlobalPicklists::Picklist
 
       def global_picklist
         @global_picklist
       end
 
         # The method to set the value to global_picklist
-        # @param global_picklist [lang::Object] A lang::Object
+        # @param global_picklist [GlobalPicklists::Picklist] An instance of GlobalPicklists::Picklist
 
       def global_picklist=(global_picklist)
+        if global_picklist!=nil and !global_picklist.is_a? GlobalPicklists::Picklist
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: global_picklist EXPECTED TYPE: Picklist', nil, nil)
+        end
         @global_picklist = global_picklist
         @key_modified['global_picklist'] = 1
       end
 
-        # The method to get the updateexistingrecords
+        # The method to get the update_existing_records
         # @return A Boolean value
 
-      def updateexistingrecords
-        @updateexistingrecords
+      def update_existing_records
+        @update_existing_records
       end
 
-        # The method to set the value to updateexistingrecords
-        # @param updateexistingrecords [Boolean] A Boolean
+        # The method to set the value to update_existing_records
+        # @param update_existing_records [Boolean] A Boolean
 
-      def updateexistingrecords=(updateexistingrecords)
-        if updateexistingrecords!=nil and ! [true, false].include?updateexistingrecords
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: updateexistingrecords EXPECTED TYPE: Boolean', nil, nil)
+      def update_existing_records=(update_existing_records)
+        if update_existing_records!=nil and ! [true, false].include?update_existing_records
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: update_existing_records EXPECTED TYPE: Boolean', nil, nil)
         end
-        @updateexistingrecords = updateexistingrecords
+        @update_existing_records = update_existing_records
         @key_modified['_update_existing_records'] = 1
       end
 

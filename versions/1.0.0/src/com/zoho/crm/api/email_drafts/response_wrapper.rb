@@ -7,25 +7,25 @@ module ZOHOCRMSDK
 
       # Creates an instance of ResponseWrapper
       def initialize
-        @emaildrafts = nil
+        @email_drafts = nil
         @key_modified = Hash.new
       end
 
-        # The method to get the emaildrafts
+        # The method to get the email_drafts
         # @return An instance of Array
 
-      def emaildrafts
-        @emaildrafts
+      def email_drafts
+        @email_drafts
       end
 
-        # The method to set the value to emaildrafts
-        # @param emaildrafts [Array] An instance of Array
+        # The method to set the value to email_drafts
+        # @param email_drafts [Array] An instance of Array
 
-      def emaildrafts=(emaildrafts)
-        if emaildrafts!=nil and !emaildrafts.is_a? Array
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: emaildrafts EXPECTED TYPE: Array', nil, nil)
+      def email_drafts=(email_drafts)
+        if email_drafts!=nil and !email_drafts.is_a? Array
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: email_drafts EXPECTED TYPE: Array', nil, nil)
         end
-        @emaildrafts = emaildrafts
+        @email_drafts = email_drafts
         @key_modified['__email_drafts'] = 1
       end
 

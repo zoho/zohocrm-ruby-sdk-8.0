@@ -82,18 +82,14 @@ module ZOHOCRMSDK
 
       def save_token(token)
         if token.is_a? Authenticator::OAuthToken
-
           is_row_present = false
-
           oauth_token = token
-
-          all_contents = CSV.table(@file_path)
-
+          all_contents = CSV.read(@file_path, headers: true)
           all_contents.each do |row|
-            if row.length > 1
+            if row.to_hash.length > 1
               if !oauth_token.id.nil?
-                id = get_data(row[0].to_s)
-                if !id.nil? && !oauth_token.id.nil? && id == oauth_token.id
+                id = get_data(row['id'].to_s)
+                if !id.nil? && id == oauth_token.id
                   is_row_present = true
                 end
               else
@@ -109,12 +105,9 @@ module ZOHOCRMSDK
               end
             else
               target_index = all_contents.find_index(row)
-              if !target_index.nil?
-                all_contents.delete_at(target_index)
-              end
+              all_contents.delete_at(target_index) if target_index
             end
           end
-
           unless is_row_present
             if !oauth_token.id.nil? || !oauth_token.user_signature.nil?
               if oauth_token.refresh_token.nil? && oauth_token.grant_token.nil? && oauth_token.access_token.nil?
@@ -122,13 +115,17 @@ module ZOHOCRMSDK
               end
             end
             if oauth_token.id.nil?
-              new_id = generate_id(all_contents)
-              oauth_token.id = new_id
+              oauth_token.id = generate_id(all_contents)
             end
-            all_contents.push(set_token(oauth_token))
+            all_contents << set_token(oauth_token)
           end
-          File.open(@file_path, 'w') do |f|
-            f.write(all_contents.to_csv)
+          cleaned_contents = all_contents.reject do |row|
+            row.to_h.values.all? { |value| value.nil? || value.strip.empty? }
+          end
+          CSV.open(@file_path, 'w', headers: all_contents.headers, write_headers: true) do |csv|
+            cleaned_contents.each do |row|
+              csv << row
+            end
           end
         end
       rescue StandardError => e

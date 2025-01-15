@@ -1,3 +1,4 @@
+require_relative '../global_picklists/picklist'
 require_relative '../util/choice'
 require_relative '../util/model'
 
@@ -24,6 +25,7 @@ module ZOHOCRMSDK
         @maps = nil
         @delete = nil
         @show_value = nil
+        @global_picklist_value = nil
         @key_modified = Hash.new
       end
 
@@ -313,6 +315,24 @@ module ZOHOCRMSDK
         end
         @show_value = show_value
         @key_modified['show_value'] = 1
+      end
+
+        # The method to get the global_picklist_value
+        # @return An instance of GlobalPicklists::Picklist
+
+      def global_picklist_value
+        @global_picklist_value
+      end
+
+        # The method to set the value to global_picklist_value
+        # @param global_picklist_value [GlobalPicklists::Picklist] An instance of GlobalPicklists::Picklist
+
+      def global_picklist_value=(global_picklist_value)
+        if global_picklist_value!=nil and !global_picklist_value.is_a? GlobalPicklists::Picklist
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: global_picklist_value EXPECTED TYPE: Picklist', nil, nil)
+        end
+        @global_picklist_value = global_picklist_value
+        @key_modified['_global_picklist_value'] = 1
       end
 
         # The method to check if the user has modified the given key

@@ -36,7 +36,11 @@ module ZOHOCRMSDK
           end
           return parse_data(value, type_detail[Constants::TYPE])
         end
-        value
+        type = value.class.to_s
+        if value.is_a?(Hash) || value.is_a?(List)
+          type = Constants::OBJECT
+        end
+        DataTypeConverter.post_convert(value, type)
       end
 
       def parse_data(value, type)

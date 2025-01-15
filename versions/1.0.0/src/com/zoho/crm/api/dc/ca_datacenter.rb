@@ -6,11 +6,11 @@ module ZOHOCRMSDK
       def initialize; end
 
       def get_iam_url
-        'https://accounts.zoho.ca/oauth/v2/token'
+        'https://accounts.zohocloud.ca/oauth/v2/token'
       end
 
       def get_file_upload_url
-        'https://content.zohoapis.ca'
+        'https://upload.zohocloud.ca'
       end
 
       PRODUCTION = Environment.new('https://www.zohoapis.ca', CADataCenter.new.get_iam_url, CADataCenter.new.get_file_upload_url)

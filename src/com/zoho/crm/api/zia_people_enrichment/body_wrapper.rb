@@ -7,25 +7,25 @@ module ZOHOCRMSDK
 
       # Creates an instance of BodyWrapper
       def initialize
-        @ziapeopleenrichment = nil
+        @zia_people_enrichment = nil
         @key_modified = Hash.new
       end
 
-        # The method to get the ziapeopleenrichment
+        # The method to get the zia_people_enrichment
         # @return An instance of Array
 
-      def ziapeopleenrichment
-        @ziapeopleenrichment
+      def zia_people_enrichment
+        @zia_people_enrichment
       end
 
-        # The method to set the value to ziapeopleenrichment
-        # @param ziapeopleenrichment [Array] An instance of Array
+        # The method to set the value to zia_people_enrichment
+        # @param zia_people_enrichment [Array] An instance of Array
 
-      def ziapeopleenrichment=(ziapeopleenrichment)
-        if ziapeopleenrichment!=nil and !ziapeopleenrichment.is_a? Array
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: ziapeopleenrichment EXPECTED TYPE: Array', nil, nil)
+      def zia_people_enrichment=(zia_people_enrichment)
+        if zia_people_enrichment!=nil and !zia_people_enrichment.is_a? Array
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: zia_people_enrichment EXPECTED TYPE: Array', nil, nil)
         end
-        @ziapeopleenrichment = ziapeopleenrichment
+        @zia_people_enrichment = zia_people_enrichment
         @key_modified['__zia_people_enrichment'] = 1
       end
 

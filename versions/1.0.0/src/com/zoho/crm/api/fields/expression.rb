@@ -32,18 +32,18 @@ module ZOHOCRMSDK
       end
 
         # The method to get the criteria
-        # @return An instance of RollupCriteria
+        # @return An instance of Criteria
 
       def criteria
         @criteria
       end
 
         # The method to set the value to criteria
-        # @param criteria [RollupCriteria] An instance of RollupCriteria
+        # @param criteria [Criteria] An instance of Criteria
 
       def criteria=(criteria)
-        if criteria!=nil and !criteria.is_a? RollupCriteria
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: criteria EXPECTED TYPE: RollupCriteria', nil, nil)
+        if criteria!=nil and !criteria.is_a? Criteria
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: criteria EXPECTED TYPE: Criteria', nil, nil)
         end
         @criteria = criteria
         @key_modified['criteria'] = 1

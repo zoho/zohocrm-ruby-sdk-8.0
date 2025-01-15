@@ -17,7 +17,7 @@ module ZOHOCRMSDK
         @fields = nil
         @notify_on_related_action = nil
         @return_affected_field_values = nil
-        @deleteevents = nil
+        @delete_events = nil
         @resource_name = nil
         @channel_expiry = nil
         @resource_id = nil
@@ -152,21 +152,21 @@ module ZOHOCRMSDK
         @key_modified['return_affected_field_values'] = 1
       end
 
-        # The method to get the deleteevents
+        # The method to get the delete_events
         # @return An instance of Util::Choice
 
-      def deleteevents
-        @deleteevents
+      def delete_events
+        @delete_events
       end
 
-        # The method to set the value to deleteevents
-        # @param deleteevents [Util::Choice] An instance of Util::Choice
+        # The method to set the value to delete_events
+        # @param delete_events [Util::Choice] An instance of Util::Choice
 
-      def deleteevents=(deleteevents)
-        if deleteevents!=nil and !deleteevents.is_a? Util::Choice
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: deleteevents EXPECTED TYPE: Util::Choice', nil, nil)
+      def delete_events=(delete_events)
+        if delete_events!=nil and !delete_events.is_a? Util::Choice
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: delete_events EXPECTED TYPE: Util::Choice', nil, nil)
         end
-        @deleteevents = deleteevents
+        @delete_events = delete_events
         @key_modified['_delete_events'] = 1
       end
 

@@ -20,6 +20,9 @@ module ZOHOCRMSDK
         @presence = nil
         @pick_list_values_sorted_lexically = nil
         @pick_list_values = nil
+        @associated_fields_count = nil
+        @used_in_modules = nil
+        @customizable = nil
         @key_modified = Hash.new
       end
 
@@ -237,6 +240,60 @@ module ZOHOCRMSDK
         end
         @pick_list_values = pick_list_values
         @key_modified['pick_list_values'] = 1
+      end
+
+        # The method to get the associated_fields_count
+        # @return A Integer value
+
+      def associated_fields_count
+        @associated_fields_count
+      end
+
+        # The method to set the value to associated_fields_count
+        # @param associated_fields_count [Integer] A Integer
+
+      def associated_fields_count=(associated_fields_count)
+        if associated_fields_count!=nil and !associated_fields_count.is_a? Integer
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: associated_fields_count EXPECTED TYPE: Integer', nil, nil)
+        end
+        @associated_fields_count = associated_fields_count
+        @key_modified['associated_fields_count'] = 1
+      end
+
+        # The method to get the used_in_modules
+        # @return An instance of Array
+
+      def used_in_modules
+        @used_in_modules
+      end
+
+        # The method to set the value to used_in_modules
+        # @param used_in_modules [Array] An instance of Array
+
+      def used_in_modules=(used_in_modules)
+        if used_in_modules!=nil and !used_in_modules.is_a? Array
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: used_in_modules EXPECTED TYPE: Array', nil, nil)
+        end
+        @used_in_modules = used_in_modules
+        @key_modified['used_in_modules'] = 1
+      end
+
+        # The method to get the customizable
+        # @return A Boolean value
+
+      def customizable
+        @customizable
+      end
+
+        # The method to set the value to customizable
+        # @param customizable [Boolean] A Boolean
+
+      def customizable=(customizable)
+        if customizable!=nil and ! [true, false].include?customizable
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: customizable EXPECTED TYPE: Boolean', nil, nil)
+        end
+        @customizable = customizable
+        @key_modified['customizable'] = 1
       end
 
         # The method to check if the user has modified the given key

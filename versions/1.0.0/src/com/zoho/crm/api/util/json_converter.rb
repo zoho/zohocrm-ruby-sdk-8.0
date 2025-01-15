@@ -115,7 +115,12 @@ module ZOHOCRMSDK
                 request_json[lower_case_key_name] = field_value
               end
             else
-              request_json[key_name] = set_data(member_detail, field_value)
+              if key_name.downcase == Constants::BODY.downcase && @common_api_handler.api_path.end_with?(Constants::FUNCTIONS_PATH) &&
+                @common_api_handler.api_path.include?(Constants::FUNCTIONS)
+                return set_data(member_detail, field_value)
+              else
+                request_json[key_name] = set_data(member_detail, field_value)
+              end
             end
           end
         end

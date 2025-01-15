@@ -10,8 +10,8 @@ module ZOHOCRMSDK
         @default = nil
         @name = nil
         @id = nil
-        @defaultview = nil
-        @defaultassignmentview = nil
+        @default_view = nil
+        @default_assignment_view = nil
         @key_modified = Hash.new
       end
 
@@ -69,39 +69,39 @@ module ZOHOCRMSDK
         @key_modified['id'] = 1
       end
 
-        # The method to get the defaultview
+        # The method to get the default_view
         # @return An instance of DefaultView
 
-      def defaultview
-        @defaultview
+      def default_view
+        @default_view
       end
 
-        # The method to set the value to defaultview
-        # @param defaultview [DefaultView] An instance of DefaultView
+        # The method to set the value to default_view
+        # @param default_view [DefaultView] An instance of DefaultView
 
-      def defaultview=(defaultview)
-        if defaultview!=nil and !defaultview.is_a? DefaultView
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: defaultview EXPECTED TYPE: DefaultView', nil, nil)
+      def default_view=(default_view)
+        if default_view!=nil and !default_view.is_a? DefaultView
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: default_view EXPECTED TYPE: DefaultView', nil, nil)
         end
-        @defaultview = defaultview
+        @default_view = default_view
         @key_modified['_default_view'] = 1
       end
 
-        # The method to get the defaultassignmentview
+        # The method to get the default_assignment_view
         # @return An instance of DefaultAssignmentView
 
-      def defaultassignmentview
-        @defaultassignmentview
+      def default_assignment_view
+        @default_assignment_view
       end
 
-        # The method to set the value to defaultassignmentview
-        # @param defaultassignmentview [DefaultAssignmentView] An instance of DefaultAssignmentView
+        # The method to set the value to default_assignment_view
+        # @param default_assignment_view [DefaultAssignmentView] An instance of DefaultAssignmentView
 
-      def defaultassignmentview=(defaultassignmentview)
-        if defaultassignmentview!=nil and !defaultassignmentview.is_a? DefaultAssignmentView
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: defaultassignmentview EXPECTED TYPE: DefaultAssignmentView', nil, nil)
+      def default_assignment_view=(default_assignment_view)
+        if default_assignment_view!=nil and !default_assignment_view.is_a? DefaultAssignmentView
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: default_assignment_view EXPECTED TYPE: DefaultAssignmentView', nil, nil)
         end
-        @defaultassignmentview = defaultassignmentview
+        @default_assignment_view = default_assignment_view
         @key_modified['_default_assignment_view'] = 1
       end
 

@@ -1,3 +1,5 @@
+require_relative '../modules/minified_module'
+require_relative '../related_lists/related_list'
 require_relative '../util/model'
 
 module ZOHOCRMSDK
@@ -52,36 +54,36 @@ module ZOHOCRMSDK
       end
 
         # The method to get the based_on_module
-        # @return An instance of MinifiedField
+        # @return An instance of Modules::MinifiedModule
 
       def based_on_module
         @based_on_module
       end
 
         # The method to set the value to based_on_module
-        # @param based_on_module [MinifiedField] An instance of MinifiedField
+        # @param based_on_module [Modules::MinifiedModule] An instance of Modules::MinifiedModule
 
       def based_on_module=(based_on_module)
-        if based_on_module!=nil and !based_on_module.is_a? MinifiedField
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: based_on_module EXPECTED TYPE: MinifiedField', nil, nil)
+        if based_on_module!=nil and !based_on_module.is_a? Modules::MinifiedModule
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: based_on_module EXPECTED TYPE: MinifiedModule', nil, nil)
         end
         @based_on_module = based_on_module
         @key_modified['based_on_module'] = 1
       end
 
         # The method to get the related_list
-        # @return An instance of MinifiedField
+        # @return An instance of RelatedLists::RelatedList
 
       def related_list
         @related_list
       end
 
         # The method to set the value to related_list
-        # @param related_list [MinifiedField] An instance of MinifiedField
+        # @param related_list [RelatedLists::RelatedList] An instance of RelatedLists::RelatedList
 
       def related_list=(related_list)
-        if related_list!=nil and !related_list.is_a? MinifiedField
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: related_list EXPECTED TYPE: MinifiedField', nil, nil)
+        if related_list!=nil and !related_list.is_a? RelatedLists::RelatedList
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: related_list EXPECTED TYPE: RelatedList', nil, nil)
         end
         @related_list = related_list
         @key_modified['related_list'] = 1

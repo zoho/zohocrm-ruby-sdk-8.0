@@ -622,10 +622,14 @@ module ZOHOCRMSDK
         if data_type.downcase.include? Constants::MULTI_SELECT_LOOKUP
           field_detail[Constants::SKIP_MANDATORY] = true
           unless field_instance.multiselectlookup.nil?
-            unless field_instance.multiselectlookup.linking_module.nil?
-              linking_module = field_instance.multiselectlookup.linking_module
-              field_detail[Constants::MODULE] = linking_module.api_name
-              module_name = linking_module
+            unless field_instance.multiselectlookup.linking_details.nil?
+              linking_details = field_instance.multiselectlookup.linking_details
+              unless linking_details.nil?
+                linking_module = linking_details.module
+                field_detail[Constants::MODULE] = linking_module.api_name
+                module_name.api_name = linking_module.api_name
+                module_name.id = linking_module.id
+              end
             end
           end
           field_detail[Constants::SUBFORM] = true
@@ -634,10 +638,14 @@ module ZOHOCRMSDK
         if data_type.downcase.include? Constants::MULTI_USER_LOOKUP
           field_detail[Constants::SKIP_MANDATORY] = true
           unless field_instance.multiuserlookup.nil?
-            unless field_instance.multiuserlookup.linking_module.nil?
-              linking_module = field_instance.multiuserlookup.linking_module
-              field_detail[Constants::MODULE] = linking_module.api_name
-              module_name = linking_module
+            unless field_instance.multiuserlookup.linking_details.nil?
+              linking_details = field_instance.multiuserlookup.linking_details
+              unless linking_details.nil?
+                linking_module = linking_details.module
+                field_detail[Constants::MODULE] = linking_module.api_name
+                module_name.api_name = linking_module.api_name
+                module_name.id = linking_module.id
+              end
             end
           end
           field_detail[Constants::SUBFORM] = true

@@ -9,25 +9,25 @@ module ZOHOCRMSDK
 
       # Creates an instance of ResponseWrapper
       def initialize
-        @emailssharingdetails = nil
+        @emails_sharing_details = nil
         @key_modified = Hash.new
       end
 
-        # The method to get the emailssharingdetails
+        # The method to get the emails_sharing_details
         # @return An instance of Array
 
-      def emailssharingdetails
-        @emailssharingdetails
+      def emails_sharing_details
+        @emails_sharing_details
       end
 
-        # The method to set the value to emailssharingdetails
-        # @param emailssharingdetails [Array] An instance of Array
+        # The method to set the value to emails_sharing_details
+        # @param emails_sharing_details [Array] An instance of Array
 
-      def emailssharingdetails=(emailssharingdetails)
-        if emailssharingdetails!=nil and !emailssharingdetails.is_a? Array
-          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: emailssharingdetails EXPECTED TYPE: Array', nil, nil)
+      def emails_sharing_details=(emails_sharing_details)
+        if emails_sharing_details!=nil and !emails_sharing_details.is_a? Array
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: emails_sharing_details EXPECTED TYPE: Array', nil, nil)
         end
-        @emailssharingdetails = emailssharingdetails
+        @emails_sharing_details = emails_sharing_details
         @key_modified['__emails_sharing_details'] = 1
       end
 

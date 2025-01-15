@@ -99,6 +99,12 @@ module ZOHOCRMSDK
               sub_type = sub_type1[Constants::TYPE]
               if sub_type.downcase == Constants::OBJECT.downcase
                 check = true
+              elsif sub_type1.key?(Constants::SUB_TYPE_1)
+                sub_type_1 = sub_type1[Constants::SUB_TYPE_1]
+                type = sub_type_1[Constants::TYPE]
+                if type.downcase == Constants::OBJECT.downcase
+                  check = true
+                end
               else
                 value.each do |each_instance|
                   unless Util::Utility.check_data_type(each_instance, sub_type)

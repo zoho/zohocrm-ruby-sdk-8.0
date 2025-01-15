@@ -8,6 +8,7 @@ module ZOHOCRMSDK
       # Creates an instance of Unique
       def initialize
         @casesensitive = nil
+        @disable = nil
         @key_modified = Hash.new
       end
 
@@ -27,6 +28,21 @@ module ZOHOCRMSDK
         end
         @casesensitive = casesensitive
         @key_modified['casesensitive'] = 1
+      end
+
+        # The method to get the disable
+        # @return A lang::Object value
+
+      def disable
+        @disable
+      end
+
+        # The method to set the value to disable
+        # @param disable [lang::Object] A lang::Object
+
+      def disable=(disable)
+        @disable = disable
+        @key_modified['_disable'] = 1
       end
 
         # The method to check if the user has modified the given key

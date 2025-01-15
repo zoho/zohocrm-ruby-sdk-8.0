@@ -9,6 +9,7 @@ module ZOHOCRMSDK
       def initialize
         @display_label = nil
         @sequence_number = nil
+        @actions_allowed = nil
         @issubformsection = nil
         @tab_traversal = nil
         @api_name = nil
@@ -57,6 +58,24 @@ module ZOHOCRMSDK
         end
         @sequence_number = sequence_number
         @key_modified['sequence_number'] = 1
+      end
+
+        # The method to get the actions_allowed
+        # @return An instance of ActionsAllowed
+
+      def actions_allowed
+        @actions_allowed
+      end
+
+        # The method to set the value to actions_allowed
+        # @param actions_allowed [ActionsAllowed] An instance of ActionsAllowed
+
+      def actions_allowed=(actions_allowed)
+        if actions_allowed!=nil and !actions_allowed.is_a? ActionsAllowed
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: actions_allowed EXPECTED TYPE: ActionsAllowed', nil, nil)
+        end
+        @actions_allowed = actions_allowed
+        @key_modified['actions_allowed'] = 1
       end
 
         # The method to get the issubformsection

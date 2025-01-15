@@ -14,6 +14,11 @@ module ZOHOCRMSDK
         @delete = nil
         @deactivate = nil
         @set_layout_permissions = nil
+        @add_field = nil
+        @change_tab_traversal = nil
+        @reorder = nil
+        @remove_field = nil
+        @change_column_count = nil
         @key_modified = Hash.new
       end
 
@@ -141,6 +146,96 @@ module ZOHOCRMSDK
         end
         @set_layout_permissions = set_layout_permissions
         @key_modified['set_layout_permissions'] = 1
+      end
+
+        # The method to get the add_field
+        # @return A Boolean value
+
+      def add_field
+        @add_field
+      end
+
+        # The method to set the value to add_field
+        # @param add_field [Boolean] A Boolean
+
+      def add_field=(add_field)
+        if add_field!=nil and ! [true, false].include?add_field
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: add_field EXPECTED TYPE: Boolean', nil, nil)
+        end
+        @add_field = add_field
+        @key_modified['add_field'] = 1
+      end
+
+        # The method to get the change_tab_traversal
+        # @return A Boolean value
+
+      def change_tab_traversal
+        @change_tab_traversal
+      end
+
+        # The method to set the value to change_tab_traversal
+        # @param change_tab_traversal [Boolean] A Boolean
+
+      def change_tab_traversal=(change_tab_traversal)
+        if change_tab_traversal!=nil and ! [true, false].include?change_tab_traversal
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: change_tab_traversal EXPECTED TYPE: Boolean', nil, nil)
+        end
+        @change_tab_traversal = change_tab_traversal
+        @key_modified['change_tab_traversal'] = 1
+      end
+
+        # The method to get the reorder
+        # @return A Boolean value
+
+      def reorder
+        @reorder
+      end
+
+        # The method to set the value to reorder
+        # @param reorder [Boolean] A Boolean
+
+      def reorder=(reorder)
+        if reorder!=nil and ! [true, false].include?reorder
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: reorder EXPECTED TYPE: Boolean', nil, nil)
+        end
+        @reorder = reorder
+        @key_modified['reorder'] = 1
+      end
+
+        # The method to get the remove_field
+        # @return A Boolean value
+
+      def remove_field
+        @remove_field
+      end
+
+        # The method to set the value to remove_field
+        # @param remove_field [Boolean] A Boolean
+
+      def remove_field=(remove_field)
+        if remove_field!=nil and ! [true, false].include?remove_field
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: remove_field EXPECTED TYPE: Boolean', nil, nil)
+        end
+        @remove_field = remove_field
+        @key_modified['remove_field'] = 1
+      end
+
+        # The method to get the change_column_count
+        # @return A Boolean value
+
+      def change_column_count
+        @change_column_count
+      end
+
+        # The method to set the value to change_column_count
+        # @param change_column_count [Boolean] A Boolean
+
+      def change_column_count=(change_column_count)
+        if change_column_count!=nil and ! [true, false].include?change_column_count
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: change_column_count EXPECTED TYPE: Boolean', nil, nil)
+        end
+        @change_column_count = change_column_count
+        @key_modified['change_column_count'] = 1
       end
 
         # The method to check if the user has modified the given key

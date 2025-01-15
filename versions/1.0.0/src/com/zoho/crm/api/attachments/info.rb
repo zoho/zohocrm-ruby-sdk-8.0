@@ -11,6 +11,9 @@ module ZOHOCRMSDK
         @page = nil
         @count = nil
         @more_records = nil
+        @next_page_token = nil
+        @page_token_expiry = nil
+        @previous_page_token = nil
         @key_modified = Hash.new
       end
 
@@ -84,6 +87,60 @@ module ZOHOCRMSDK
         end
         @more_records = more_records
         @key_modified['more_records'] = 1
+      end
+
+        # The method to get the next_page_token
+        # @return A String value
+
+      def next_page_token
+        @next_page_token
+      end
+
+        # The method to set the value to next_page_token
+        # @param next_page_token [String] A String
+
+      def next_page_token=(next_page_token)
+        if next_page_token!=nil and !next_page_token.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: next_page_token EXPECTED TYPE: String', nil, nil)
+        end
+        @next_page_token = next_page_token
+        @key_modified['next_page_token'] = 1
+      end
+
+        # The method to get the page_token_expiry
+        # @return An instance of DateTime
+
+      def page_token_expiry
+        @page_token_expiry
+      end
+
+        # The method to set the value to page_token_expiry
+        # @param page_token_expiry [DateTime] An instance of DateTime
+
+      def page_token_expiry=(page_token_expiry)
+        if page_token_expiry!=nil and !page_token_expiry.is_a? DateTime
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: page_token_expiry EXPECTED TYPE: DateTime', nil, nil)
+        end
+        @page_token_expiry = page_token_expiry
+        @key_modified['page_token_expiry'] = 1
+      end
+
+        # The method to get the previous_page_token
+        # @return A String value
+
+      def previous_page_token
+        @previous_page_token
+      end
+
+        # The method to set the value to previous_page_token
+        # @param previous_page_token [String] A String
+
+      def previous_page_token=(previous_page_token)
+        if previous_page_token!=nil and !previous_page_token.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: previous_page_token EXPECTED TYPE: String', nil, nil)
+        end
+        @previous_page_token = previous_page_token
+        @key_modified['previous_page_token'] = 1
       end
 
         # The method to check if the user has modified the given key
