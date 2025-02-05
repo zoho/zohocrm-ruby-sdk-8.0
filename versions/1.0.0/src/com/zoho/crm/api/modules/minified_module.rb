@@ -11,6 +11,7 @@ module ZOHOCRMSDK
         @id = nil
         @module_name = nil
         @module_1 = nil
+        @crypt = nil
         @key_modified = Hash.new
       end
 
@@ -84,6 +85,24 @@ module ZOHOCRMSDK
         end
         @module_1 = module_1
         @key_modified['module'] = 1
+      end
+
+        # The method to get the crypt
+        # @return A Boolean value
+
+      def crypt
+        @crypt
+      end
+
+        # The method to set the value to crypt
+        # @param crypt [Boolean] A Boolean
+
+      def crypt=(crypt)
+        if crypt!=nil and ! [true, false].include?crypt
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: crypt EXPECTED TYPE: Boolean', nil, nil)
+        end
+        @crypt = crypt
+        @key_modified['crypt'] = 1
       end
 
         # The method to check if the user has modified the given key

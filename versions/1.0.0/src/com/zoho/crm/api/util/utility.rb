@@ -398,7 +398,7 @@ module ZOHOCRMSDK
         field_api_names_integer = %w[integer]
         field_api_names_boolean = %w[boolean]
         field_api_names_long = %w[bigint long]
-        field_api_names_double = %w[double percent lookup currency]
+        field_api_names_double = %w[double percent currency]
         field_api_names_field_file = %w[fileupload]
         field_api_names_datetime = %w[datetime event_reminder]
         field_api_names_date = %w[date]
@@ -627,6 +627,7 @@ module ZOHOCRMSDK
               unless linking_details.nil?
                 linking_module = linking_details.module
                 field_detail[Constants::MODULE] = linking_module.api_name
+                module_name = Modules::MinifiedModule.new
                 module_name.api_name = linking_module.api_name
                 module_name.id = linking_module.id
               end
@@ -643,6 +644,7 @@ module ZOHOCRMSDK
               unless linking_details.nil?
                 linking_module = linking_details.module
                 field_detail[Constants::MODULE] = linking_module.api_name
+                module_name = Modules::MinifiedModule.new
                 module_name.api_name = linking_module.api_name
                 module_name.id = linking_module.id
               end
@@ -653,7 +655,6 @@ module ZOHOCRMSDK
 
         if data_type.downcase.include? Constants::MULTI_MODULE_LOOKUP
           field_detail[Constants::SKIP_MANDATORY, true]
-          field_detail[Constants::SUBFORM, true]
         end
 
         if @@apitype_vs_structurename.include? data_type
