@@ -15,6 +15,7 @@ module ZOHOCRMSDK
         @same_as_everyday = nil
         @daily_timing = nil
         @custom_timing = nil
+        @timezone = nil
         @key_modified = Hash.new
       end
 
@@ -142,6 +143,24 @@ module ZOHOCRMSDK
         end
         @custom_timing = custom_timing
         @key_modified['custom_timing'] = 1
+      end
+
+        # The method to get the timezone
+        # @return A String value
+
+      def timezone
+        @timezone
+      end
+
+        # The method to set the value to timezone
+        # @param timezone [String] A String
+
+      def timezone=(timezone)
+        if timezone!=nil and !timezone.is_a? String
+          raise SDKException.new(Constants::DATA_TYPE_ERROR, 'KEY: timezone EXPECTED TYPE: String', nil, nil)
+        end
+        @timezone = timezone
+        @key_modified['timezone'] = 1
       end
 
         # The method to check if the user has modified the given key
