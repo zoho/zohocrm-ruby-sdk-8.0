@@ -25,6 +25,11 @@ License
 
 ## Latest Version
 
+- [2.0.0](/versions/2.0.0/README.md)
+
+    - New fields have been added to the History Tracking Fields API. 
+    - Fixed the issue with the inventory mass conversion status API.
+
 - [1.0.0](/versions/1.0.0/README.md)
     - Ruby SDK upgraded to support v8 APIs.
     - Ruby SDK improved to support the following new APIs
@@ -42,7 +47,7 @@ For older versions, please [refer](https://github.com/zoho/zohocrm-ruby-sdk-8.0/
 ## Including the SDK in your project
 You can include the SDK to your project using:
 
-- For including the latest [version](https://github.com/zoho/zohocrm-ruby-sdk-8.0/releases/tag/1.0.0)
+- For including the latest [version](https://github.com/zoho/zohocrm-ruby-sdk-8.0/releases/tag/2.0.0)
 
     - Ruby SDK is available through Gem . You can download the gem using:
 
@@ -89,4 +94,4 @@ You can include the SDK to your project using:
             gem install tzinfo
             ```
 
-For more details, kindly refer [here](/versions/1.0.0/README.md).
+For more details, kindly refer [here](/versions/2.0.0/README.md).
