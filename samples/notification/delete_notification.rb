@@ -7,6 +7,8 @@ class DeleteNotification
 			param_instance = ZOHOCRMSDK::ParameterMap.new
 			param_instance.add(ZOHOCRMSDK::Notifications::NotificationsOperations::DeleteNotificationParam.channel_ids, "106800211123")
 			
+			# Optional: Filter by module to delete notifications for specific modules
+			# param_instance.add(ZOHOCRMSDK::Notifications::NotificationsOperations::DeleteNotificationParam.module_1, "Leads")
 			response = notifications_operations.delete_notification(param_instance)
 			
 			if response != nil
